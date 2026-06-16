@@ -1,0 +1,466 @@
+:root{
+
+    --fondo-principal: #fafafa;
+    --fondo-targetas: #ffffff;
+    --fuente-titulo: "FuenteTitulo", monospace;
+    --fuente-principal: "FuenteMain", sans-serif;
+
+}
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: var(--fondo-principal);
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*header*/
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.123) ;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+#titulo{
+    color: rgb(81, 201, 231);
+    padding: 5px;
+    text-decoration: none;
+    border-bottom: 3px solid rgb(81, 201, 231);
+    font-family: var(--fuente-titulo);
+    font-size: 25px ;
+}
+
+header a{
+    text-decoration: none;
+}
+
+#navegacion ul {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+
+}
+
+#navegacion ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color .3s;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#navegacion ul li{
+
+    padding: 20px;
+
+}
+
+#navegacion ul li a:hover{
+
+    color: rgb(81, 201, 231);
+
+}
+
+#seleccion{
+    border-bottom: 3px solid rgb(81, 201, 231);
+}
+
+#menu-hamburguesa{
+    display: none;
+}
+
+#navegacion-links{
+    display: none;
+}
+
+/*main*/
+
+button{ /*Boton*/
+
+    background:radial-gradient(rgb(114, 173, 141),aqua);
+    font-weight:bold ;
+    padding: 6px;
+    width: 70px;
+    height: auto;
+    font-size: 16px;
+    border-radius:30px;
+    border: none;
+    cursor: pointer;
+    transition: color .3s;
+
+}
+#search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#busqueda {
+    height: 38px;
+    width: 400px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#busqueda::placeholder {
+    color: #aaa;
+}
+
+#busqueda:focus {
+    border-color: #03cce6;
+    box-shadow: 0 0 0 3px rgba(30, 61, 162, 0.15), 0 4px 10px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+button:hover{ /*boton hover*/
+    background: radial-gradient(rgb(82, 216, 145),rgb(64, 167, 167));
+}
+
+
+main{
+    padding: 30px;
+    flex: 1;
+    font-family: var(--fuente-principal);
+    animation: aparecer 2s ease-in-out alternate;
+}
+
+#contenedor-targetas{ /*El catalogo*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    align-items: stretch;
+    padding: 20px;
+    gap: 30px;
+}
+
+.targeta-catalogo{ /*Para las targetas Yofrank*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.123);
+    overflow: hidden;
+    padding: 30px;
+    transition: .3s all ease;
+    border-top: 5px solid rgb(81, 201, 231);
+    border-bottom: 5px solid rgb(81, 201, 231);
+    font-weight: bold;
+    cursor: pointer;
+}
+.completa{
+ display:none;
+ position: fixed;
+ top:0;
+ left: 0;
+ height:100vh;
+ width: 100vw;
+ background-color: rgba(0, 0, 0, 0.886);
+ justify-content: center;
+ align-items: center;
+ z-index: 99999;
+}
+.cardTarjetica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 630px;
+    width: 500px;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 1px 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    animation: 1s aparecer ease-in-out;
+
+}
+
+.cardTarjetica img {
+    max-height: 350px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.cardTarjetica p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 6px 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.cardTarjetica p:nth-of-type(2) {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3da2;
+    margin-bottom: 10px;
+}
+
+#equis {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#equis:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+
+.targeta-catalogo img{ /**/
+    width: 200px;
+}
+
+.targeta-catalogo:hover{ /**/
+    transform: translateY(-15px);
+    box-shadow: 0px 0px 50px 0px rgb(81, 201, 231);
+}
+
+#contenedor-glosario{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    align-items: stretch;
+    padding: 20px;
+    gap: 30px;
+}
+
+.targeta-glosario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.123);
+    overflow: hidden;
+    padding: 30px;
+    transition: .3s all ease;
+    border-top: 5px dashed rgb(81, 201, 231);
+    border-bottom: 5px dashed rgb(81, 201, 231);
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.targeta-glosario img{ /**/
+    width: 200px;
+}
+
+.targeta-glosario:hover{ /**/
+    transform: translateY(-15px);
+    box-shadow: 0px 0px 50px 0px rgb(81, 201, 231);
+}
+.vainaConVaina{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.vainaConVaina figcaption{
+    font-size: 1.7rem;
+}
+
+#formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: aparecer 2s ease-in-out alternate;
+    font-family: var(--fuente-principal);
+}
+
+form{
+    padding: 30px;
+    border: 3px black solid;
+    border-radius: 30px;
+}
+
+form input[type="text"]{
+
+    background: transparent;
+    border-radius:20px ;
+    padding: 10px;
+
+}
+
+form input[type="email"]{
+
+    background: transparent;
+    border-radius:20px ;
+    padding: 10px;
+
+}
+
+form input[type="number"]{
+
+    background: transparent;
+    border-radius:20px ;
+    padding: 10px;
+
+}
+
+form input[type="tel"]{
+
+    background: transparent;
+    border-radius:20px ;
+    padding: 10px;
+
+}
+form input[type="date"]{
+
+    background: transparent;
+    border-radius:20px ;
+    padding: 10px;
+
+}
+
+#formulario form{
+    background-color: rgb(154, 233, 196);
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.233);
+    width: 600px;
+}
+
+#formulario form textarea{
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+form input[type="radio"]{
+
+    background: transparent;
+    border-radius:20px ;
+    padding: 10px;
+
+}
+
+#formulario form textarea{
+    width: 245px;
+    height: 300px;
+}
+
+#formulario button, #formulario input[type="submit"], #formulario input[type="reset"]{
+    background: radial-gradient(rgb(109, 223, 188), rgb(103, 166, 218)) ;
+    border: none;
+    padding: 3px;
+    font-weight: bold ;
+    cursor: pointer;
+}
+
+#formulario button:active, #formulario input[type="submit"]:active, #formulario input[type="reset"]:active{
+    scale: 60%;
+    transition: .5s;
+}
+
+#volver-arriba{
+    display: none;
+    font-family: var(--fuente-principal);
+    padding: 5px;
+}
+
+/*footer*/
+
+footer{
+    background: rgb(162, 231, 216);
+    padding: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.123);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+#rds-1 a img{
+
+    width: 30px;
+
+}
+
+
+/*Fuentes*/
+
+@font-face {
+    font-family: "FuenteTitulo";
+    src: url("../fonts/Jersey10-Regular.ttf");
+}
+
+@font-face {
+    font-family: "FuenteMain";
+    src: url("../fonts/AlbertSans-VariableFont_wght.ttf");
+}
+
+
+
+/*animaciones*/
+
+@keyframes aparecer{
+
+
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+
+}
+
+@keyframes aparecer2{
+
+
+    from{
+        opacity: 0;
+        transform: translate(140px);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(160px);
+    }
+
+
+
+}
+
+
+
+

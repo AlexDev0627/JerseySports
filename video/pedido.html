@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./img/JerseysSports-icon.png">
+    <title>JerseysSports</title>
+	<link rel="stylesheet" href="./estilos/estilo.css">
+	<link rel="stylesheet" href="./estilos/responsive.css">
+</head>
+<body id="ini">
+	<header>
+		<a id="titulo" href="./index.html"><h1>JerseysSports</h1></a>
+		<nav id="menu-hamburguesa">
+			<a id="titulo-responsive" href="./index.html"><h1>JerseysSports</h1></a>
+			<input type="checkbox" id="menu-desplegable">
+			<label for="menu-desplegable" id="hamburguesa-icono">
+				<span></span>
+				<span></span>
+				<span></span>
+			</label>
+
+			<ul id="navegacion-links">
+				<li><a href="./index.html">Inicio</a></li>
+				<li><a href="./catalogo.html">Equipamientos</a></li>
+				<li><a href="./glosario.html">Glosario de diseños</a></li>
+				<li><a href="#ini">Pedidos</a></li>
+			</ul>
+		</nav>
+		<nav id="navegacion">	 
+			<ul>    
+				<li><a href="./index.html">Inicio</a></li>
+				<li><a href="./catalogo.html">Equipamientos</a></li>
+				<li><a href="./glosario.html">Glosario de Diseños</a></li>
+				<li id="seleccion"><a href="#ini">Pedidos </a></li>     
+		    </ul>			
+		</nav>
+	</header>
+		
+	<div id="formulario">
+		<form action="procesar.php" method="get" enctype="multipart/form-data">
+				
+				<h1>Pedido</h1>
+				
+				<h2>Registro de Datos</h2>
+				
+					  <label for="correo"><strong>Correo Electrónico:</strong></label>
+				<input type="email" id="correo" name="correo" required
+					   placeholder="Ej: correo@ejemplo.com">
+				<br><br>
+				  
+				<label for="edad"><strong>Edad:</strong></label>
+				<input type="number" id="edad" name="edad" min="1" max="100" required>                      
+				<br><br>
+				
+				<label for="nombre"><strong>Nombre:</strong></label>
+				<input type="text" id="nombre" name="nombre" required 
+					   placeholder="Ej: Carolina"
+					   pattern="[A-Za-z]+"
+					   minlength="3"
+					   maxlength="20">
+				<br><br>
+
+				<label for="apellido"><strong>Apellido:</strong></label>
+				<input type="text" id="apellido" name="apellido" required
+					   title="Ingrese sólo letras"
+					   pattern="[A-Za-z]+"
+					   minlength="3"
+					   maxlength="20">
+				<br><br>
+
+				<label for="fecha_nac"><strong>Fecha de Nacimiento:</strong></label>
+				<input type="date" id="fecha_nac" name="fecha_nac" max="2026-06-17">
+				<br><br>
+
+				<label for="cedula"><strong>Cédula:</strong></label>
+				<input type="text" id="cedula" name="cedula"
+					   pattern="^[VE]-[0-9]{7,8}$"
+					   placeholder="Ej: V-152483"
+					   required>
+				<br><br>
+
+				<label for="telefono"><strong>Teléfono:</strong></label>
+				<input type="tel" id="telefono" name="telefono"
+					   pattern="^(0414|0424|0412|0426|0416)[0-9]{7}$"
+					   placeholder="Ej: 0424-4212345"
+					   required>
+				<br><br>
+
+				<label><strong>Sexo:</strong></label>
+				<input type="radio" id="masculino" name="sexo" value="masculino" required>
+				<span>Masculino</span>
+
+				<input type="radio" id="femenino" name="sexo" value="femenino" required checked>
+				<span>Femenino</span>
+				<br><br>
+				
+				<h3>Equipamiento</h3>
+
+				<label>
+					<input type="checkbox" name="equipamiento" value="local">
+					<strong>Local</strong>
+				</label><br>
+
+				<label>
+					<input type="checkbox" name="equipamiento" value="visitante">
+					<strong>Visitante</strong>
+				</label>
+				<br><br>
+
+				<h3>Versión</h3>
+
+				<label>
+					<input type="checkbox" name="versión" value="jugador">
+					<strong>Jugador</strong>
+				</label><br>
+
+				<label>
+					<input type="checkbox" name="versión" value="fan">
+					<strong>Fan</strong>
+				</label>
+				<br><br>
+
+				<label for="direccion"><strong>Dirección:</strong></label><br>
+				<textarea id="direccion" name="direccion"></textarea>
+				<br><br>
+
+				<input type="hidden" name="id_registro" value="103">
+
+				<button type="reset">Reset</button>
+				<button type="submit">Enviar</button>
+				<br><br>
+
+				<input type="reset" value="Limpiar">
+				<input type="submit" value="Enviar Datos">
+		</form>
+	</div>
+
+	<a id="volver-arriba" href="#ini">Volver Arriba</a>
+		
+	<footer>
+				
+				
+		<h2>Redes</h2>
+				
+		<p>Síguenos en nuestras redes sociales.</p>
+				
+			   
+		<div id="rds-1">
+			<a href="https://www.facebook.com" target="_blank" ><img src="./img/facebook-icon.png" alt="facebook" loading="lazy"></a>
+			<a href="https://www.instagram.com" target="_blank"><img src="./img/instagram-icon.png" alt="instagram" loading="lazy"></a>
+				
+			<a href="https://www.tiktok.com" target="_blank"><img src="./img/tik-tok-icon.png" alt="tiktok" loading="lazy"></a>
+	   
+		</div>
+			   
+		<p>&copy; 2026, JerseysSports Official Store</p>
+				
+				
+	</footer>
+		
+	<script src="./js/script.js" defer></script>
+
+</body>
+</html>
