@@ -171,7 +171,7 @@ tarjetCatalogo.forEach((camisa) => {
           <img id="img-complete" src="${camisaEncontrada.img}" alt="Imagen Completa">
           <p style="color:white;" hidden>id: ${camisaEncontrada.id}
           <p style="color:white;">Seleccion: ${camisaEncontrada.selection}
-          <p style="color:white;font-size:0.8rem;">${camisaEncontrada.texto}</p>
+          <p style="color:white;font-size:0.9rem;">${camisaEncontrada.texto}</p>
 			    <span id="equis">&times;</span> 
         </div>
       </div>
